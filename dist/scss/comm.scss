@@ -43,7 +43,7 @@
       object-fit: contain;
     }
 
-    .material-symbols-outlined {
+    .ico-user {
       // position: absolute;
       display: inline-block;
       font-size: 30px;
@@ -66,287 +66,347 @@
         font-family: "Font Awesome 6 free";
       }
     }
-  }
-  .header-wrap-b {
-    display: flex;
-    // position: fixed;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    padding: 10px 0px;
-    // border-bottom: 1px solid #eee;
-    box-sizing: border-box;
+    // search
+    .search {
+      position: relative;
+      height: 34px;
+      margin-bottom: 10px;
+      // border-bottom: 1px solid #fff;
+    }
+    .search input {
+      opacity: 0;
+      width: 24px;
+      height: inherit;
+      padding: 4px 10px;
+      border: none; /* 테두리(border) 제거 */
+      border-bottom: 1px solid #ccc; /* 밑줄 스타일 설정 */
+      box-sizing: border-box;
+      outline: none;
+      color: #777;
+      font-size: 12px;
+      transition: width 0.4s;
+      background-color: transparent; /* 배경을 투명하게 설정 */
+      &:focus {
+        height: 34px;
+        width: 190px;
+        border-bottom: 1px solid #ffffff;
+        opacity: 1;
+      }
+    }
 
-    #logo {
+    .search .material-icons {
+      height: 24px;
       position: absolute;
-      // z-index: 1100;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      height: 70px;
+      top: 0;
+      bottom: 0;
+      right: 5px;
+      margin: auto;
+      transition: 0.4s;
+      color: #fff;
+    }
+    .search.focused .material-icons {
+      opacity: 0;
+    }
+
+    .header-wrap-b {
       display: flex;
-      align-items: center;
-    }
-
-    #logo img {
-      height: 21px;
-      object-fit: contain;
-    }
-
-    .material-symbols-outlined {
-      // position: absolute;
-      display: inline-block;
-      font-size: 30px;
-      color: $w;
-    }
-
-    .inner {
       // position: fixed;
-      display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 70px;
+      position: relative;
+      top: 0;
+      left: 0;
       width: 100%;
-    }
-    .btn-g {
-      display: flex;
-      height: 70px;
-      align-items: center;
-      &::before {
-        font-size: 20px;
-        font-family: "Font Awesome 6 free";
-      }
-    }
-  }
-}
-.gnb-wrap {
-  .input-burger {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    &:checked {
-      // input이 선택됬을 때
-      & + label {
-        .bar {
-          background: $w;
-          &:nth-child(2) {
-            background: $w;
-            transform: rotate(45deg) translate(4px, 4px);
-          }
-          &:nth-child(3) {
-            // display: none;
-            opacity: 0;
-          }
-          &:nth-child(4) {
-            background: $w;
-            transform: rotate(-45deg) translate(6px, -6px);
-          }
-        }
-        .bar-w {
-          background: $w;
-          &:nth-child(2) {
-            background: $w;
-            transform: rotate(45deg) translate(4px, 4px);
-          }
-          &:nth-child(3) {
-            // display: none;
-            opacity: 0;
-          }
-          &:nth-child(4) {
-            background: $w;
-            transform: rotate(-45deg) translate(6px, -6px);
-          }
-        }
-      }
-      & ~ #gnb {
-        left: 0;
-      }
-    }
-  }
+      height: 100%;
+      z-index: 1000;
+      padding: 10px 0px;
+      // border-bottom: 1px solid #eee;
+      box-sizing: border-box;
 
-  .label-burger {
-    cursor: pointer;
-    position: relative;
-    z-index: 1100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 40px;
-    height: $headerHight;
-    .bar {
-      display: block;
-      width: 26px;
-      height: 2px;
-      background: $w;
-      transition: all 0.3s;
-      // display none, block은 트렌지션 적용x
-      // 2개 이상 적용시 all -> 위치값 다시 적용
-    }
-    .bar-w {
-      display: block;
-      width: 26px;
-      height: 2px;
-      background: $b;
-      transition: all 0.3s;
-      // display none, block은 트렌지션 적용x
-      // 2개 이상 적용시 all -> 위치값 다시 적용
-    }
-    span {
-      &:nth-child(3) {
-        margin: 5px 0;
-      }
-    }
-  }
-  #gnb {
-    // display: none;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    bottom: 0;
-    width: 100%;
-    padding: 30px;
-    background: $b;
-    // rgba(0, 0, 0, 0.8)
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    // margin-left: 15px;
-    // padding-left: 18%;
-    transition: right 0.3s;
-    padding-left: 22.8%;
-    .gnb-wrap {
-      margin-left: 15%;
-    }
-    .gnb-logo img {
-      width: 204.67px;
-      margin-bottom: 70px;
-      padding-top: 6px;
-      &::after {
-        content: "";
+      #logo {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
+        // z-index: 1100;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 70px;
+        display: flex;
+        align-items: center;
+      }
+
+      #logo img {
+        height: 21px;
+        object-fit: contain;
+      }
+
+      // .material-symbols-outlined {
+      //   // position: absolute;
+      //   display: inline-block;
+      //   font-size: 30px;
+      //   color: $w;
+      // }
+
+      .inner {
+        // position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        width: 100%;
+      }
+      .btn-g {
+        display: flex;
+        height: 70px;
+        align-items: center;
+        &::before {
+          font-size: 20px;
+          font-family: "Font Awesome 6 free";
+        }
       }
     }
-
-    li {
-      color: #ffffff;
-      line-height: 30px;
+  }
+  .gnb-wrap {
+    .input-burger {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      &:checked {
+        // input이 선택됬을 때
+        & + label {
+          .bar {
+            background: $w;
+            &:nth-child(2) {
+              background: $w;
+              transform: rotate(45deg) translate(4px, 4px);
+            }
+            &:nth-child(3) {
+              // display: none;
+              opacity: 0;
+            }
+            &:nth-child(4) {
+              background: $w;
+              transform: rotate(-45deg) translate(6px, -6px);
+            }
+          }
+          .bar-w {
+            background: $w;
+            &:nth-child(2) {
+              background: $w;
+              transform: rotate(45deg) translate(4px, 4px);
+            }
+            &:nth-child(3) {
+              // display: none;
+              opacity: 0;
+            }
+            &:nth-child(4) {
+              background: $w;
+              transform: rotate(-45deg) translate(6px, -6px);
+            }
+          }
+        }
+        & ~ #gnb {
+          left: 0;
+        }
+      }
     }
-    a {
-      color: $w;
+    .gnb-sns {
+      margin-top: 15px;
+      display: flex;
+      width: 100px;
+      justify-content: space-between;
+    }
+    .depth1 {
+      padding-bottom: 70px;
+      border-bottom: 1px solid #fff;
+    }
+    .depth1 a {
+      font-size: 19px;
+      line-height: 2;
+    }
+
+    .depth2 a {
+      font-size: 15px;
+    }
+
+    .label-burger {
+      cursor: pointer;
+      position: relative;
+      z-index: 1100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 40px;
+      height: $headerHight;
+      .bar {
+        display: block;
+        width: 26px;
+        height: 2px;
+        background: $w;
+        transition: all 0.3s;
+        // display none, block은 트렌지션 적용x
+        // 2개 이상 적용시 all -> 위치값 다시 적용
+      }
+      .bar-w {
+        display: block;
+        width: 26px;
+        height: 2px;
+        background: $b;
+        transition: all 0.3s;
+        // display none, block은 트렌지션 적용x
+        // 2개 이상 적용시 all -> 위치값 다시 적용
+      }
+      span {
+        &:nth-child(3) {
+          margin: 5px 0;
+        }
+      }
+    }
+    #gnb {
+      // display: none;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      bottom: 0;
+      width: 100%;
+      padding: 30px;
+      background: $b;
+      // rgba(0, 0, 0, 0.8)
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      // margin-left: 15px;
+      // padding-left: 18%;
+      transition: right 0.3s;
+      padding-left: 22.8%;
+      .gnb-wrap {
+        margin-left: 15%;
+      }
+      .gnb-logo img {
+        width: 204.67px;
+        margin-bottom: 70px;
+        padding-top: 6px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      li {
+        color: #ffffff;
+        line-height: 30px;
+      }
+      a {
+        color: $w;
+      }
     }
   }
-}
 
-// footer
-#footer {
-  position: relative;
-  margin-bottom: 60px;
-  .lst-foot {
-    li {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      border-bottom: 1px solid $b;
-      .iconbox {
+  // footer
+  #footer {
+    position: relative;
+    margin-bottom: 60px;
+    .lst-foot {
+      li {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid $b;
+        .iconbox {
+          border-bottom: 1px solid #ffffff;
+        }
+      }
+      li:last-child {
         border-bottom: 1px solid #ffffff;
       }
     }
-    li:last-child {
-      border-bottom: 1px solid #ffffff;
-    }
-  }
-  .lst-sns {
-    display: flex;
-    a {
+    .lst-sns {
       display: flex;
+      a {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+      }
+    }
+    li {
+      position: relative;
+      padding: 5px;
+      color: $b;
       align-items: center;
-      margin: 5px;
+    }
+    li:first-child {
+      position: relative;
+      padding: 5px;
+      color: $b;
+    }
+    .material-icons-outlined {
+      position: absolute;
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.9rem;
     }
   }
-  li {
+  .iconbox {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 10px;
+    color: $b;
+  }
+  .ocean {
+    padding: 20px 20px;
+  }
+  .ocean {
+    display: block;
+    margin: 0 auto;
+    width: 190px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  .li:first-child {
     position: relative;
     padding: 5px;
     color: $b;
+  }
+  .ocean {
+    overflow: hidden;
+    width: 100%;
+    border-bottom: 1px solid $b;
+    border-top: 1px solid $b;
+    margin-bottom: 40px;
+    padding: 0 0;
+    height: 50px;
+    top: 50%;
+    margin-top: 80px;
+    transform: translateY(-50%);
+    display: flex;
     align-items: center;
   }
-  li:first-child {
-    position: relative;
-    padding: 5px;
-    color: $b;
-  }
-  .material-icons-outlined {
+  .wave {
+    background: url(../../images/comm/footer/slidelogo-black.png) repeat-x;
+    // background-size: auto 100%;
     position: absolute;
-    display: inline-block;
-    margin-top: 4px;
-    font-size: 0.9rem;
+    z-index: 100;
+    top: 13px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
   }
-}
-.iconbox {
-  display: flex;
-  flex-direction: row-reverse;
-  margin-right: 10px;
-  color: $b;
-}
-.ocean {
-  padding: 20px 20px;
-}
-.ocean {
-  display: block;
-  margin: 0 auto;
-  width: 190px;
-  height: 20px;
-  flex-shrink: 0;
-}
-.li:first-child {
-  position: relative;
-  padding: 5px;
-  color: $b;
-}
-.ocean {
-  overflow: hidden;
-  width: 100%;
-  border-bottom: 1px solid $b;
-  border-top: 1px solid $b;
-  margin-bottom: 40px;
-  padding: 0 0;
-  height: 50px;
-  top: 50%;
-  margin-top: 80px;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-}
-.wave {
-  background: url(../../images/comm/footer/slidelogo-black.png) repeat-x;
-  // background-size: auto 100%;
-  position: absolute;
-  z-index: 100;
-  top: 13px;
-  width: 6400px;
-  height: 198px;
-  animation: wave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-  transform: translate3d(0, 0, 0);
-}
-@keyframes wave {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: -1600px;
+  @keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
   }
 }
