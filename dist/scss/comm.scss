@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-@import "variables", "mixin", "fonts", "reset", "main", "contents", "item-view", "cart", "goods-women", "goods-men", "introduce",
-  "collection", "payment";
-
+@import "variables", "mixin", "fonts", "reset", "main", "contents", "item-view", "cart", "goods-women", "goods-men",
+  "introduce", "collection", "payment";
 
 // 공통
 .container {
@@ -502,9 +501,18 @@
       color: $w;
     }
     .depth1 {
+      width: 204.66px;
       margin-bottom: 0px;
       border-bottom: 1px solid #ffffff;
       font-size: 20px;
+      .on {
+        .tit {
+          color: red;
+        }
+      }
+    }
+    .depth2 {
+      display: none;
     }
     .depth2 a {
       font-family: $ro;
@@ -597,8 +605,7 @@
   align-items: center;
 }
 .wave {
-  background: url(../../images/comm/white/saintlaurent-logo-slide-white.png)
-    repeat-x;
+  background: url(../../images/comm/white/saintlaurent-logo-slide-white.png) repeat-x;
   // background-size: auto 100%;
   position: absolute;
   z-index: 100;

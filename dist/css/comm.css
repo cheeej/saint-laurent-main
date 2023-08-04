@@ -2418,9 +2418,16 @@ legend {
   color: #fff;
 }
 .gnb-wrap #gnb .depth1 {
+  width: 204.66px;
   margin-bottom: 0px;
   border-bottom: 1px solid #ffffff;
   font-size: 20px;
+}
+.gnb-wrap #gnb .depth1 .on .tit {
+  color: red;
+}
+.gnb-wrap #gnb .depth2 {
+  display: none;
 }
 .gnb-wrap #gnb .depth2 a {
   font-family: "Roboto";
